@@ -6,6 +6,3 @@ import scipy.stats as stats
 
 def percentile(data: ds.data, x: int):
     stats.percentileofscore(data.get_data(), x)
-
-
-def
