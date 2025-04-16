@@ -1,0 +1,22 @@
+import numpy as np 
+import scipy as sp
+
+
+class data:
+    def __init__(self, x1: np.array):
+        self.x = x1
+
+    def get_data(self):
+        return self.x
+
+    def mean(self):
+        return np.mean(self.x)
+
+    def var(self):
+        mean = mean()
+        return (np.sum(np.square(self.x - mean)))
+    
+    def sd(self):
+        return np.sqrt(self.var())
+    
+
