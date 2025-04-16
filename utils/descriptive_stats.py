@@ -3,8 +3,11 @@ import scipy as sp
 
 
 class data:
-    def __init__(self, x1: np.array):
+    def __init__(self, x1):
         self.x = x1
+
+    def length(self):
+        return len(self.x)
 
     #TODO: resolve datatypes and exceptions
     def __mul__(self, data2):
@@ -17,8 +20,8 @@ class data:
         return np.mean(self.x)
 
     def var(self):
-        mean = mean()
-        return (np.sum(np.square(self.x - mean)))
+        mean = self.mean()
+        return (np.sum(np.square(self.x - self.mean())))/(len(self.x)-1)
     
     def sd(self):
         return np.sqrt(self.var())
