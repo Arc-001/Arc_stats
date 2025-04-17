@@ -1,2 +1,2 @@
 # Arc_stats
-A generalised but opiniated statistics/ML framework
+A generalized but opinionated statistics/ML framework
