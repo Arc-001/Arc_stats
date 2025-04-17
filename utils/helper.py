@@ -6,3 +6,14 @@ import scipy.stats as stats
 
 def percentile(data: ds.data, x: int):
     stats.percentileofscore(data.get_data(), x)
+
+def L1_norm(**kwargs):
+    """
+    L1 norm of a vector
+    :param kwargs: x: vector
+    :return: L1 norm of the vector
+    """
+    x = kwargs.get('x')
+    return np.sum(np.abs(x))
+
+def L2_norm()
