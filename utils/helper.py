@@ -15,5 +15,3 @@ def L1_norm(**kwargs):
     """
     x = kwargs.get('x')
     return np.sum(np.abs(x))
-
-def L2_norm()

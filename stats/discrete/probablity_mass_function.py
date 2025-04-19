@@ -67,6 +67,30 @@ class cdf(pmf):
         self.len = pmf_obj.len
         self.cdf = np.cumsum(self.p)
 
+    def F(self, x):
+        # F(x) = P(X <= x)
+        # returns the value of cdf at x
+        if x < self.x[0]:
+            return 0
+        elif x > self.x[-1]:
+            return 1
+        else:
+            idx = np.searchsorted(self.x, x)
+            return self.cdf[idx-1]
+        
+    def F_interpolate(self, x):
+        # F(x) = P(X <= x)
+        # returns the value of cdf at x
+        if x < self.x[0]:
+            return 0
+        elif x > self.x[-1]:
+            return 1
+        else:
+            idx = np.searchsorted(self.x, x)
+            return np.interp(x, self.x[idx-1:idx+1], self.cdf[idx-1:idx+1])
+        
+    
+
     def plot(self, **kwargs):
         plt.plot(self.x, self.cdf, **kwargs)
         plt.xlabel('x')
